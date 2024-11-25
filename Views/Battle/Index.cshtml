@@ -1,0 +1,103 @@
+﻿@model BattleSimulation.Models.FighterViewModel
+
+@{
+    ViewData["Title"] = "Симуляция Боя";
+}
+
+<h1 class="text-center my-4">Симуляция Боя</h1>
+
+<form asp-action="StartFight" method="post">
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Боец 1</h3>
+            <!-- Имя -->
+            <div class="mb-3">
+                <label asp-for="Fighter1.Name" class="form-label"></label>
+                <input asp-for="Fighter1.Name" class="form-control" />
+                <span asp-validation-for="Fighter1.Name" class="text-danger"></span>
+            </div>
+          
+            <!-- Здоровье -->
+            <div class="mb-3">
+                <label asp-for="Fighter1.Health" class="form-label"></label>
+                <input asp-for="Fighter1.Health" class="form-control" />
+                <span asp-validation-for="Fighter1.Health" class="text-danger"></span>
+            </div>
+            <!-- Сила -->
+            <div class="mb-3">
+                <label asp-for="Fighter1.Strength" class="form-label"></label>
+                <input asp-for="Fighter1.Strength" class="form-control" />
+                <span asp-validation-for="Fighter1.Strength" class="text-danger"></span>
+            </div>
+            
+            <!-- Ловкость -->
+            <div class="mb-3">
+                <label asp-for="Fighter1.Agility" class="form-label"></label>
+                <input asp-for="Fighter1.Agility" class="form-control" />
+                <span asp-validation-for="Fighter1.Agility" class="text-danger"></span>
+            </div>
+            <!-- Масса -->
+            <div class="mb-3">
+                <label asp-for="Fighter1.Mass" class="form-label"></label>
+                <input asp-for="Fighter1.Mass" class="form-control" />
+                <span asp-validation-for="Fighter1.Mass" class="text-danger"></span>
+            </div>
+            <!-- Защита -->
+            <div class="mb-3">
+                <label asp-for="Fighter1.Defense" class="form-label"></label>
+                <input asp-for="Fighter1.Defense" class="form-control" />
+                <span asp-validation-for="Fighter1.Defense" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h3>Боец 2</h3>
+          
+            <!-- Имя -->
+            <div class="mb-3">
+                <label asp-for="Fighter2.Name" class="form-label"></label>
+                <input asp-for="Fighter2.Name" class="form-control" />
+                <span asp-validation-for="Fighter2.Name" class="text-danger"></span>
+            </div>
+            <!-- Здоровье -->
+            <div class="mb-3">
+                <label asp-for="Fighter2.Health" class="form-label"></label>
+                <input asp-for="Fighter2.Health" class="form-control" />
+                <span asp-validation-for="Fighter2.Health" class="text-danger"></span>
+            </div>
+
+            <!-- Сила -->
+            <div class="mb-3">
+                <label asp-for="Fighter2.Strength" class="form-label"></label>
+                <input asp-for="Fighter2.Strength" class="form-control" />
+                <span asp-validation-for="Fighter2.Strength" class="text-danger"></span>
+            </div>
+            <!-- Ловкость -->
+            <div class="mb-3">
+                <label asp-for="Fighter2.Agility" class="form-label"></label>
+                <input asp-for="Fighter2.Agility" class="form-control" />
+                <span asp-validation-for="Fighter2.Agility" class="text-danger"></span>
+            </div>
+            <!-- Масса -->
+            <div class="mb-3">
+                <label asp-for="Fighter2.Mass" class="form-label"></label>
+                <input asp-for="Fighter2.Mass" class="form-control" />
+                <span asp-validation-for="Fighter2.Mass" class="text-danger"></span>
+            </div>
+            <!-- Защита -->
+            <div class="mb-3">
+                <label asp-for="Fighter2.Defense" class="form-label"></label>
+                <input asp-for="Fighter2.Defense" class="form-control" />
+                <span asp-validation-for="Fighter2.Defense" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="text-center my-4">
+        <button type="submit" class="btn btn-primary btn-lg">Начать Бой</button>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

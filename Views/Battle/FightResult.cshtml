@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Результаты Боя";
+}
+
+<h1 class="text-center my-4">Результаты Боя</h1>
+
+<div id="battle-log" class="mb-4">
+</div>
+
+<div class="text-center">
+    <a href="@(Url.Action("Index", "Battle"))" class="btn btn-secondary">Начать Новый Бой</a>
+</div>
+
+@section Scripts {
+    <script src="~/js/battle.js"></script>
+}
